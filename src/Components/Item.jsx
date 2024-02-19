@@ -3,7 +3,7 @@ import React, { useState } from "react";
 function Item({ imgSrc, itemName, soundSrc }) {
   const [volume, setVolume] = useState(0);
 
-  const handleVolumeChange = (event) => {
+  const handlePlay = (event) => {
     const newVolume = event.target.value;
     setVolume(newVolume);
 
@@ -11,9 +11,7 @@ function Item({ imgSrc, itemName, soundSrc }) {
     if (audioRef.current) {
       audioRef.current.volume = newVolume / 100; // Volume range is 0-1
     }
-  };
 
-  const handlePlayPause = () => {
     if (volume === 0) {
       // Stop the audio
       if (audioRef.current) {
@@ -32,11 +30,11 @@ function Item({ imgSrc, itemName, soundSrc }) {
   return (
     <>
       <audio ref={audioRef} src={soundSrc}></audio>
-      <div>
-        <div>
-          <img src={imgSrc} alt={itemName} />
+      <div className="cards-individual-container">
+        <div className="cards-individual-image">
+          <img src={imgSrc} alt={itemName} className="individual-image" />
         </div>
-        <div>
+        <div className="cards-individual-slider">
           <div>{itemName}</div>
           <div className="slidecontainer">
             <input
@@ -46,11 +44,8 @@ function Item({ imgSrc, itemName, soundSrc }) {
               value={volume}
               className="slider"
               id="myRange"
-              onChange={handleVolumeChange}
+              onChange={handlePlay}
             />
-            <button onClick={handlePlayPause}>
-              {volume === 0 ? "Play" : "Pause"}
-            </button>
           </div>
         </div>
       </div>
