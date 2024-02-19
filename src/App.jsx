@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "./Components/Navbar";
+import Case from "./Components/Case";
 import "./App.css";
 
 function App() {
@@ -7,8 +8,8 @@ function App() {
 
   return (
     <section className="container-body">
-      <Navbar></Navbar>
-      <h1>Cozy</h1>
+      <Navbar />
+      <Case />
     </section>
   );
 }
