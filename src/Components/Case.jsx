@@ -5,7 +5,7 @@ import { data } from "../data";
 function Case() {
   const addBreak = (a, b) => {
     if (a < b) {
-      return <br />;
+      return <hr />;
     }
     return;
   };
@@ -17,6 +17,7 @@ function Case() {
             <div style={{ textTransform: "capitalize" }}>
               {Object.keys(item)[1]}
             </div>
+
             <div style={{ backgroundColor: "#333", borderRadius: "20px" }}>
               {Object.values(item)[1].map((individual) => {
                 return (
@@ -26,10 +27,12 @@ function Case() {
                       itemName={Object.keys(individual)[1]}
                       soundSrc={Object.values(individual)[1].soundSource}
                     ></Item>
-                    {/* {addBreak(
+                    {addBreak(
                       Object.values(individual)[0],
-                      individual[0].length
-                    )} */}
+                      Object.values(
+                        Object.values(Object.values(item).at(-1)).at(-1)
+                      ).at(0)
+                    )}
                   </div>
                 );
               })}
