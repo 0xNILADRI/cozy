@@ -35,7 +35,7 @@ function Item({ imgSrc, itemName, soundSrc }) {
           <img src={imgSrc} alt={itemName} className="individual-image" />
         </div>
         <div className="cards-individual-slider">
-          <div>{itemName}</div>
+          <div className="item-name">{itemName}</div>
           <div className="slidecontainer">
             <input
               type="range"
