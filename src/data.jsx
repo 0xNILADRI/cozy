@@ -30,6 +30,12 @@ import wavesSound from "./assets/sounds/waves.ogg";
 import whiteNoiseSound from "./assets/sounds/white-noise.ogg";
 import windSound from "./assets/sounds/wind.ogg";
 
+// import footer icons
+import footerOneImage from "./assets/footer-icons/linkedin.svg";
+import footerTwoImage from "./assets/footer-icons/twitter.svg";
+import footerThreeImage from "./assets/footer-icons/discord.svg";
+import footerFourImage from "./assets/footer-icons/telegram.svg";
+
 export const data = [
   {
     id: 1,
@@ -82,5 +88,36 @@ export const data = [
         whiteNoise: { imageLogo: whiteNoiseImg, soundSource: whiteNoiseSound },
       },
     ],
+  },
+];
+
+export const footerIconLinks = [
+  {
+    key: 1,
+    href: "https://www.linkedin.com/in/0xniladri/",
+    classname: "linkedin",
+    sourceImage: footerOneImage,
+    altText: "linkedin logo",
+  },
+  {
+    key: 2,
+    href: "https://twitter.com/0xNILADRI",
+    classname: "twitter",
+    sourceImage: footerTwoImage,
+    altText: "twitter logo",
+  },
+  {
+    key: 3,
+    href: "https://discord.com/channels/@me/nil1406#0717",
+    classname: "discord",
+    sourceImage: footerThreeImage,
+    altText: "discord logo",
+  },
+  {
+    key: 4,
+    href: "tg://user?id=325142979",
+    classname: "telegram",
+    sourceImage: footerFourImage,
+    altText: "telegram logo",
   },
 ];

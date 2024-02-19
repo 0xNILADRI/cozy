@@ -136,3 +136,36 @@
   background: #ffffff;
   cursor: pointer;
 }
+
+footer {
+  margin-top: 30px;
+  height: auto;
+  border-radius: 20px;
+}
+
+.footer-color {
+  background: #333;
+}
+
+footer .footer-container .footer-name {
+  font-size: 20px;
+  padding-top: 15px;
+  margin-bottom: 8px;
+}
+
+footer .footer-container .footer-email {
+  font-size: 15px;
+}
+
+footer .footer-container .footer-icons {
+  margin: 12px 0;
+  padding: 5px 0 12px;
+}
+
+footer .footer-container .footer-icons .twitter,
+footer .footer-container .footer-icons .linkedin,
+footer .footer-container .footer-icons .discord,
+footer .footer-container .footer-icons .telegram {
+  width: 32px;
+  padding-right: 20px;
+}
