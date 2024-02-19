@@ -32,6 +32,7 @@ import windSound from "./assets/sounds/wind.ogg";
 
 export const data = [
   {
+    id: 1,
     nature: [
       { key: 1, rain: { imageLogo: rainImg, soundSource: rainSound } },
       { key: 2, storm: { imageLogo: stormImg, soundSource: stormSound } },
@@ -49,6 +50,7 @@ export const data = [
     ],
   },
   {
+    id: 2,
     travel: [
       { key: 1, train: { imageLogo: trainImg, soundSource: trainSound } },
       { key: 2, boat: { imageLogo: boatImg, soundSource: boatSound } },
@@ -56,6 +58,7 @@ export const data = [
     ],
   },
   {
+    id: 3,
     interiors: [
       {
         key: 1,
@@ -68,6 +71,7 @@ export const data = [
     ],
   },
   {
+    id: 4,
     noise: [
       {
         key: 1,
