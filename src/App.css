@@ -38,20 +38,20 @@
   font-size: 32px;
   text-align: left;
   text-transform: uppercase;
-  padding: 8px 20px;
+  padding: 12px 20px;
 }
 
 .cards-individual-container {
   display: flex;
   width: auto;
-  height: 80px;
+  height: 70px;
 }
 
 .cards-individual-image {
   flex: 0 0 25%;
   display: flex;
-  justify-content: center; /* center horizontally */
-  align-items: center; /* center vertically */
+  justify-content: center;
+  align-items: center;
 }
 
 .individual-image {
@@ -64,7 +64,7 @@
   font-size: 20px;
   text-align: left;
   text-transform: capitalize;
-  padding: 0 5px;
+  padding: 0 5px 10px;
 }
 
 .cards-individual-slider {
@@ -72,7 +72,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 16px 0;
+  padding: 10px 0;
 }
 
 .line-container {
@@ -94,41 +94,45 @@
   border-top: 1px solid #535353;
 }
 
-/* volume slider */
-
 .slidecontainer {
-  width: 100%; /* Width of the outside container */
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .slider {
-  -webkit-appearance: none; /* Override default CSS styles */
+  -webkit-appearance: none;
+  text-align: left;
   appearance: none;
-  width: 85%; /* Full-width */
-  height: 2px; /* Specified height */
+  width: 88%;
+  height: 2px;
   background: #535353;
-  outline: none; /* Remove outline */
-  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
   transition: opacity 0.2s;
+  /* Add margin-right to create space between the slider and the edge of the container */
+  margin-left: 5px; /* Adjust as needed */
 }
 
 .slider:hover {
   opacity: 1;
 }
 
-/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 .slider::-webkit-slider-thumb {
-  -webkit-appearance: none; /* Override default look */
+  -webkit-appearance: none;
   appearance: none;
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #ffffff; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px; /* Set a specific slider handle width */
-  height: 25px; /* Slider handle height */
-  background: #ffffff; /* Green background */
-  cursor: pointer; /* Cursor on hover */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
 }
