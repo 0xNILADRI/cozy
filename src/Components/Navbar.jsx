@@ -1,31 +1,31 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import playButton from "../assets/play.svg";
 import pauseButton from "../assets/pause.svg";
 import lightModeButton from "../assets/lightMode.svg";
 import darkModeButton from "../assets/darkMode.svg";
 
-function Navbar({ onChangePlaying, onChangeTheme }) {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isLightMode, setIsLightMode] = useState(false);
+function Navbar({ isPlaying, isLightMode, setIsPlaying, setIsLightMode }) {
+  useEffect(() => {
+    const root = document.getElementById("root");
+    root.style.backgroundColor = isLightMode ? "#f5f5dc" : "#242424";
+  }, [isLightMode]);
 
   const handlePlaying = (event) => {
     setIsPlaying(!isPlaying);
-    onChangePlaying(!isPlaying);
   };
 
   const handleTheme = (event) => {
     setIsLightMode(!isLightMode);
-    onChangeTheme(!isLightMode);
   };
 
   const switchStyle = {
     filter: isLightMode
-      ? ""
+      ? "invert(0%) sepia(0%) saturate(7469%) hue-rotate(213deg) brightness(104%) contrast(107%)"
       : "invert(100%) sepia(100%) saturate(15%) hue-rotate(208deg) brightness(104%) contrast(102%)",
   };
 
   return (
-    <nav className="navBar">
+    <nav className={isLightMode ? "navBar bg-col-light col-light" : "navBar"}>
       <div>
         <img
           className="media-logo"
@@ -36,7 +36,7 @@ function Navbar({ onChangePlaying, onChangeTheme }) {
         />
       </div>
       <div>
-        <h1 className="cozy-logo">Cozy</h1>
+        <h1 style={{ color: isLightMode ? "#020205" : "#FFFFFF" }}>Cozy</h1>
       </div>
       <div>
         <img

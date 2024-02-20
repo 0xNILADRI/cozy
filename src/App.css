@@ -3,6 +3,8 @@
   margin: 0 auto;
   padding: 20px 2rem 20px;
   width: 100%;
+  /* background-color: #242424; */
+  background-color: #f5f5dc; /* light theme */
   text-align: center;
 }
 
@@ -17,9 +19,28 @@
   padding: 5px 20px;
 }
 
-.media-logo,
-.theme-logo {
+.bg-col-light {
+  background-color: #bfb281 !important;
+}
+
+.col-light {
+  color: #020205 !important;
+}
+
+.slider-light {
+  background: #020205;
+}
+
+.footer-light {
+  color: #43706b;
+}
+
+.media-logo {
   width: 36px;
+}
+
+.theme-logo {
+  width: 32px;
 }
 
 .navbar div {
@@ -48,6 +69,11 @@
   padding: 16px 20px 8px;
 }
 
+.item-card-section {
+  background-color: #333;
+  border-radius: 20px;
+}
+
 .items-iterator {
   height: 65px;
 }
@@ -72,6 +98,12 @@
   width: 50px;
   filter: invert(100%) sepia(100%) saturate(15%) hue-rotate(208deg)
     brightness(104%) contrast(102%);
+}
+
+.individual-image-light {
+  width: 50px;
+  filter: invert(2%) sepia(8%) saturate(1969%) hue-rotate(224deg)
+    brightness(85%) contrast(102%); /* light theme */
 }
 
 .item-name {
@@ -100,6 +132,11 @@
   border-top: 1px solid #535353;
 }
 
+.divider-line-light {
+  border: none;
+  border-top: 1px solid #f5f5dc;
+}
+
 .slidecontainer {
   width: 100%;
   display: flex;
@@ -111,13 +148,17 @@
   text-align: left;
   appearance: none;
   width: 88%;
-  height: 1px;
+  height: 2px;
   background: #535353;
   outline: none;
   opacity: 0.7;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
   margin-left: 5px;
+}
+
+.slider-light {
+  background: #ffffff;
 }
 
 .slider:hover {
@@ -134,11 +175,29 @@
   cursor: pointer;
 }
 
+.slider-light::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #020205;
+  cursor: pointer;
+}
+
 .slider::-moz-range-thumb {
   width: 16px;
   height: 16px;
   border-radius: 50%;
   background: #ffffff;
+  cursor: pointer;
+}
+
+.slider-light::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #020205;
   cursor: pointer;
 }
 
@@ -150,6 +209,10 @@ footer {
 
 .footer-color {
   background: #333;
+}
+
+.footer-color-light {
+  background: #bfb281;
 }
 
 footer .footer-container .footer-name {

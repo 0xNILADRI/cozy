@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 
-function Item({ imgSrc, itemName, soundSrc }) {
+function Item({ isPlaying, isLightMode, imgSrc, itemName, soundSrc }) {
   const [volume, setVolume] = useState(0);
 
   const handlePlay = (event) => {
@@ -32,17 +32,29 @@ function Item({ imgSrc, itemName, soundSrc }) {
       <audio ref={audioRef} src={soundSrc} type="audio/ogg"></audio>
       <div className="cards-individual-container">
         <div className="cards-individual-image">
-          <img src={imgSrc} alt={itemName} className="individual-image" />
+          <img
+            src={imgSrc}
+            alt={itemName}
+            className={
+              isLightMode ? "individual-image-light" : "individual-image"
+            }
+          />
         </div>
         <div className="cards-individual-slider">
-          <div className="item-name">{itemName}</div>
+          <div className={isLightMode ? "item-name col-light" : "item-name"}>
+            {itemName}
+          </div>
           <div className="slidecontainer">
             <input
               type="range"
               min="0"
               max="100"
               value={volume}
-              className="slider"
+              className={
+                isLightMode
+                  ? "slider slider-light slider-light::-webkit-slider-thumb slider-light::-moz-range-thumb"
+                  : "slider"
+              }
               id="myRange"
               onChange={handlePlay}
             />
