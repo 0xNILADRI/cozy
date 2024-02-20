@@ -1,4 +1,3 @@
-import Card from "./Card";
 import Item from "./Item";
 import { data } from "../data";
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 function Item({ imgSrc, itemName, soundSrc }) {
   const [volume, setVolume] = useState(0);
@@ -12,7 +12,7 @@ function Item({ imgSrc, itemName, soundSrc }) {
       audioRef.current.volume = newVolume / 100; // Volume range is 0-1
     }
 
-    if (volume === 0) {
+    if (volume == 0) {
       // Stop the audio
       if (audioRef.current) {
         audioRef.current.pause();
@@ -25,11 +25,11 @@ function Item({ imgSrc, itemName, soundSrc }) {
     }
   };
 
-  const audioRef = React.useRef(null);
+  const audioRef = useRef(null);
 
   return (
     <>
-      <audio ref={audioRef} src={soundSrc}></audio>
+      <audio ref={audioRef} src={soundSrc} type="audio/ogg"></audio>
       <div className="cards-individual-container">
         <div className="cards-individual-image">
           <img src={imgSrc} alt={itemName} className="individual-image" />
