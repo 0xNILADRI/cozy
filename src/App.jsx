@@ -17,7 +17,11 @@ function App() {
         setIsPlaying={setIsPlaying}
         setIsLightMode={setIsLightMode}
       />
-      <Case isPlaying={isPlaying} isLightMode={isLightMode} />
+      <Case
+        isPlaying={isPlaying}
+        setIsPlaying={setIsPlaying}
+        isLightMode={isLightMode}
+      />
       <Footer isPlaying={isPlaying} isLightMode={isLightMode} />
     </section>
   );

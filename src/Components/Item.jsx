@@ -1,6 +1,13 @@
 import React, { useState, useRef } from "react";
 
-function Item({ isPlaying, isLightMode, imgSrc, itemName, soundSrc }) {
+function Item({
+  isPlaying,
+  setIsPlaying,
+  isLightMode,
+  imgSrc,
+  itemName,
+  soundSrc,
+}) {
   const [volume, setVolume] = useState(0);
 
   const handlePlay = (event) => {
@@ -14,6 +21,7 @@ function Item({ isPlaying, isLightMode, imgSrc, itemName, soundSrc }) {
 
     if (volume == 0) {
       // Stop the audio
+      setIsPlaying(false);
       if (audioRef.current) {
         audioRef.current.pause();
       }
@@ -21,6 +29,7 @@ function Item({ isPlaying, isLightMode, imgSrc, itemName, soundSrc }) {
       // Play the audio
       if (audioRef.current) {
         audioRef.current.play();
+        setIsPlaying(true);
       }
     }
   };

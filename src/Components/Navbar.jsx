@@ -7,7 +7,9 @@ import darkModeButton from "../assets/darkMode.svg";
 function Navbar({ isPlaying, isLightMode, setIsPlaying, setIsLightMode }) {
   useEffect(() => {
     const root = document.getElementById("root");
+    const body = document.body;
     root.style.backgroundColor = isLightMode ? "#f5f5dc" : "#242424";
+    body.style.backgroundColor = isLightMode ? "#f5f5dc" : "#242424";
   }, [isLightMode]);
 
   const handlePlaying = (event) => {

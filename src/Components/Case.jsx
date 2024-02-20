@@ -2,7 +2,7 @@ import { useState } from "react";
 import Item from "./Item";
 import { data } from "../data";
 
-function Case({ isPlaying, isLightMode }) {
+function Case({ isPlaying, setIsPlaying, isLightMode }) {
   const addBreak = (a, b) => {
     if (a < b) {
       return (
@@ -39,6 +39,7 @@ function Case({ isPlaying, isLightMode }) {
                   >
                     <Item
                       isPlaying={isPlaying}
+                      setIsPlaying={setIsPlaying}
                       isLightMode={isLightMode}
                       imgSrc={Object.values(individual)[1].imageLogo}
                       itemName={Object.keys(individual)[1]}
