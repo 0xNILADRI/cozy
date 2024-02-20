@@ -4,9 +4,19 @@ import pauseButton from "../assets/pause.svg";
 import lightModeButton from "../assets/lightMode.svg";
 import darkModeButton from "../assets/darkMode.svg";
 
-function Navbar() {
+function Navbar({ onChangePlaying, onChangeTheme }) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isLightMode, setIsLightMode] = useState(false);
+
+  const handlePlaying = (event) => {
+    setIsPlaying(!isPlaying);
+    onChangePlaying(!isPlaying);
+  };
+
+  const handleTheme = (event) => {
+    setIsLightMode(!isLightMode);
+    onChangeTheme(!isLightMode);
+  };
 
   const switchStyle = {
     filter: isLightMode
@@ -21,7 +31,7 @@ function Navbar() {
           className="media-logo"
           src={isPlaying ? pauseButton : playButton}
           alt="media control button"
-          onClick={() => setIsPlaying(!isPlaying)}
+          onClick={handlePlaying}
           style={switchStyle}
         />
       </div>
@@ -33,7 +43,7 @@ function Navbar() {
           className="theme-logo"
           src={isLightMode ? darkModeButton : lightModeButton}
           alt="theme change button for UI"
-          onClick={() => setIsLightMode(!isLightMode)}
+          onClick={handleTheme}
           style={switchStyle}
         />
       </div>

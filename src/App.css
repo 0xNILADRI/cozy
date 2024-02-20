@@ -160,6 +160,8 @@ footer .footer-container .footer-name {
 
 footer .footer-container .footer-email {
   font-size: 15px;
+  text-decoration: none;
+  color: #ffffff;
 }
 
 footer .footer-container .footer-icons {
@@ -173,4 +175,8 @@ footer .footer-container .footer-icons .discord,
 footer .footer-container .footer-icons .telegram {
   width: 25px;
   padding-right: 20px;
+}
+
+footer .footer-container .footer-icons .telegram {
+  padding-right: 0;
 }
