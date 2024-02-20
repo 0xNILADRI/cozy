@@ -1,24 +1,25 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 20px 2rem 20px;
+  width: 100%;
   text-align: center;
 }
 
 .navBar {
-  width: 420px;
+  width: auto;
   display: flex;
   border-radius: 20px;
   justify-content: space-between;
   align-items: center;
   background-color: #333;
   color: white;
-  padding: 10px 20px;
+  padding: 5px 20px;
 }
 
 .media-logo,
 .theme-logo {
-  width: 40px;
+  width: 36px;
 }
 
 .navbar div {
@@ -34,17 +35,30 @@
   text-align: right;
 }
 
+.cozy-logo {
+  line-height: 20px;
+  font-size: 30px;
+  margin: 15px 0;
+}
+
 .item-heading {
-  font-size: 32px;
+  font-size: 26px;
   text-align: left;
   text-transform: uppercase;
-  padding: 12px 20px;
+  padding: 16px 20px 8px;
+}
+
+.items-iterator {
+  height: 65px;
+}
+
+.items-iterator:first-child {
+  padding-top: 6px;
 }
 
 .cards-individual-container {
   display: flex;
   width: auto;
-  height: 70px;
 }
 
 .cards-individual-image {
@@ -55,16 +69,17 @@
 }
 
 .individual-image {
-  width: 75px;
+  width: 50px;
   filter: invert(100%) sepia(100%) saturate(15%) hue-rotate(208deg)
     brightness(104%) contrast(102%);
 }
 
 .item-name {
-  font-size: 20px;
+  font-size: 18px;
+  line-height: 18px;
   text-align: left;
   text-transform: capitalize;
-  padding: 0 5px 10px;
+  padding: 0 5px;
 }
 
 .cards-individual-slider {
@@ -72,21 +87,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 6px 0;
 }
 
 .line-container {
-  position: relative;
   width: 94%;
   margin: 0 auto;
-}
-
-.line-container::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 50%;
 }
 
 .divider-line {
@@ -105,14 +111,13 @@
   text-align: left;
   appearance: none;
   width: 88%;
-  height: 2px;
+  height: 1px;
   background: #535353;
   outline: none;
   opacity: 0.7;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
-  /* Add margin-right to create space between the slider and the edge of the container */
-  margin-left: 5px; /* Adjust as needed */
+  margin-left: 5px;
 }
 
 .slider:hover {
@@ -122,16 +127,16 @@
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: #ffffff;
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background: #ffffff;
   cursor: pointer;
@@ -166,6 +171,6 @@ footer .footer-container .footer-icons .twitter,
 footer .footer-container .footer-icons .linkedin,
 footer .footer-container .footer-icons .discord,
 footer .footer-container .footer-icons .telegram {
-  width: 32px;
+  width: 25px;
   padding-right: 20px;
 }

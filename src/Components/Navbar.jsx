@@ -26,7 +26,7 @@ function Navbar() {
         />
       </div>
       <div>
-        <h1>Cozy</h1>
+        <h1 className="cozy-logo">Cozy</h1>
       </div>
       <div>
         <img

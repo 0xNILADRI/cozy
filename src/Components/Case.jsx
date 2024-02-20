@@ -18,7 +18,10 @@ function Case() {
             <div style={{ backgroundColor: "#333", borderRadius: "20px" }}>
               {Object.values(item)[1].map((individual) => {
                 return (
-                  <div key={Object.values(individual)[0]}>
+                  <div
+                    className="items-iterator"
+                    key={Object.values(individual)[0]}
+                  >
                     <Item
                       imgSrc={Object.values(individual)[1].imageLogo}
                       itemName={Object.keys(individual)[1]}
