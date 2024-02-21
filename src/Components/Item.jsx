@@ -20,18 +20,22 @@ function Item({
       gainNode = audioContext.createGain();
       gainNode.connect(audioContext.destination);
     }
-  }, []);
+    audioRef.current.volume = volume / 100; // Update the volume of the audio element
+    gainNode.gain.value = volume / 100; // Update the gain node volume
+  }, [volume]);
 
   const setVolumeWithCheck = (newVolume) => {
     if (newVolume === 0) {
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
-      audioRef.current.play();
-      setIsPlaying(true);
+      if (!isPlaying) {
+        audioRef.current.play();
+        setIsPlaying(true);
+      }
     }
 
-    gainNode.gain.value = newVolume;
+    gainNode.gain.value = newVolume / 100;
     setVolume(newVolume);
   };
 
@@ -39,6 +43,32 @@ function Item({
     const newVolume = parseFloat(event.target.value);
     setVolumeWithCheck(newVolume);
   };
+
+  // useEffect(() => {
+  //   if (!audioContext) {
+  //     audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  //     gainNode = audioContext.createGain();
+  //     gainNode.connect(audioContext.destination);
+  //   }
+  // }, [volume]);
+
+  // const setVolumeWithCheck = (newVolume) => {
+  //   if (newVolume === 0) {
+  //     audioRef.current.pause();
+  //     setIsPlaying(false);
+  //   } else {
+  //     audioRef.current.play();
+  //     setIsPlaying(true);
+  //   }
+
+  //   gainNode.gain.value = newVolume;
+  //   setVolume(newVolume);
+  // };
+
+  // const handleVolumeChange = (event) => {
+  //   const newVolume = parseFloat(event.target.value);
+  //   setVolumeWithCheck(newVolume);
+  // };
 
   return (
     <>
