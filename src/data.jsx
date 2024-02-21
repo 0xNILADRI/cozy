@@ -15,20 +15,20 @@ import whiteNoiseImg from "./assets/images/white-noise.svg";
 import windImg from "./assets/images/wind.svg";
 
 // importing sound clips
-import birdSound from "./assets/sounds/birds.ogg";
-import boatSound from "./assets/sounds/boat.ogg";
-import citySound from "./assets/sounds/city.ogg";
-import coffeeShopSound from "./assets/sounds/coffee-shop.ogg";
-import firePlaceSound from "./assets/sounds/fireplace.ogg";
-import pinkNoiseSound from "./assets/sounds/pink-noise.ogg";
-import rainSound from "./assets/sounds/rain.ogg";
-import stormSound from "./assets/sounds/storm.ogg";
-import streamSound from "./assets/sounds/stream.ogg";
-import summerNightSound from "./assets/sounds/summer-night.ogg";
-import trainSound from "./assets/sounds/train.ogg";
-import wavesSound from "./assets/sounds/waves.ogg";
-import whiteNoiseSound from "./assets/sounds/white-noise.ogg";
-import windSound from "./assets/sounds/wind.ogg";
+import birdSound from "./assets/sounds/birds.mp3";
+import boatSound from "./assets/sounds/boat.mp3";
+import citySound from "./assets/sounds/city.mp3";
+import coffeeShopSound from "./assets/sounds/coffee-shop.mp3";
+import firePlaceSound from "./assets/sounds/fireplace.mp3";
+import pinkNoiseSound from "./assets/sounds/pink-noise.mp3";
+import rainSound from "./assets/sounds/rain.mp3";
+import stormSound from "./assets/sounds/storm.mp3";
+import streamSound from "./assets/sounds/stream.mp3";
+import summerNightSound from "./assets/sounds/summer-night.mp3";
+import trainSound from "./assets/sounds/train.mp3";
+import wavesSound from "./assets/sounds/waves.mp3";
+import whiteNoiseSound from "./assets/sounds/white-noise.mp3";
+import windSound from "./assets/sounds/wind.mp3";
 
 // import footer icons
 import footerOneImage from "./assets/footer-icons/linkedin.svg";

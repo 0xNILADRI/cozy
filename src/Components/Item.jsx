@@ -38,7 +38,9 @@ function Item({
 
   return (
     <>
-      <audio ref={audioRef} src={soundSrc} type="audio/ogg"></audio>
+      <audio ref={audioRef}>
+        <source src={soundSrc} type="audio/mpeg" />
+      </audio>
       <div className="cards-individual-container">
         <div className="cards-individual-image">
           <img
