@@ -1,4 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
+
+let audioContext;
+let gainNode;
 
 function Item({
   isPlaying,
@@ -9,32 +12,33 @@ function Item({
   soundSrc,
 }) {
   const [volume, setVolume] = useState(0);
+  const audioRef = useRef(null);
 
-  const handlePlay = (event) => {
-    const newVolume = event.target.value;
-    setVolume(newVolume);
-
-    // Update audio volume
-    if (audioRef.current) {
-      audioRef.current.volume = newVolume / 100; // Volume range is 0-1
+  useEffect(() => {
+    if (!audioContext) {
+      audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      gainNode = audioContext.createGain();
+      gainNode.connect(audioContext.destination);
     }
+  }, []);
 
-    if (volume == 0) {
-      // Stop the audio
+  const setVolumeWithCheck = (newVolume) => {
+    if (newVolume === 0) {
+      audioRef.current.pause();
       setIsPlaying(false);
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
     } else {
-      // Play the audio
-      if (audioRef.current) {
-        audioRef.current.play();
-        setIsPlaying(true);
-      }
+      audioRef.current.play();
+      setIsPlaying(true);
     }
+
+    gainNode.gain.value = newVolume;
+    setVolume(newVolume);
   };
 
-  const audioRef = useRef(null);
+  const handleVolumeChange = (event) => {
+    const newVolume = parseFloat(event.target.value);
+    setVolumeWithCheck(newVolume);
+  };
 
   return (
     <>
@@ -61,13 +65,14 @@ function Item({
               min="0"
               max="100"
               value={volume}
+              defaultValue="1"
               className={
                 isLightMode
-                  ? "slider slider-light slider-light::-webkit-slider-thumb slider-light::-moz-range-thumb"
+                  ? "slider slider-light slider-light::-webkit-slider-thumb slider-light::-webkit-slider-runnable-track slider-light::-moz-range-thumb"
                   : "slider"
               }
               id="myRange"
-              onChange={handlePlay}
+              onChange={handleVolumeChange}
             />
           </div>
         </div>
