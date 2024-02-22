@@ -26,13 +26,13 @@ function App() {
       if (audio.readyState >= 2) {
         checkAllAudioFilesLoaded();
       } else {
-        audio.addEventListener("canplaythrough", checkAllAudioFilesLoaded);
+        audio.addEventListener("loadedmetadata", checkAllAudioFilesLoaded);
       }
     });
 
     return () => {
       Array.from(audioFiles).forEach((audio) => {
-        audio.removeEventListener("canplaythrough", checkAllAudioFilesLoaded);
+        audio.removeEventListener("loadedmetadata", checkAllAudioFilesLoaded);
       });
     };
   }, []);
