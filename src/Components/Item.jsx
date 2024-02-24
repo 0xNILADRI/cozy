@@ -26,10 +26,17 @@ function Item({
     audioRef.current.volume = newVolume / 100;
   };
 
+  const handleEnded = () => {
+    if (isPlaying) {
+      audioRef.current.play();
+    }
+  };
+
   return (
     <>
-      <audio ref={audioRef}>
+      <audio ref={audioRef} onEnded={handleEnded}>
         <source src={soundSrc} type="audio/mpeg" />
+        Your browser does not support the audio element.
       </audio>
       <div className="cards-individual-container">
         <div className="cards-individual-image">
