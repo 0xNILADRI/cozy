@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import Navbar from "./Components/Navbar";
 import Case from "./Components/Case";
 import Footer from "./Components/Footer";
-import "./index.css";
 import "./App.css";
 
 function App() {

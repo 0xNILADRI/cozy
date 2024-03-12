@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Item from "./Item";
 import { data } from "../data";
 

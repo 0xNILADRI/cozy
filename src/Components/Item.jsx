@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 function Item({
   isPlaying,
@@ -65,7 +65,7 @@ function Item({
                   : "slider"
               }
               id="myRange"
-              onChange={handleVolumeChange}
+              onInput={handleVolumeChange}
             />
           </div>
         </div>
