@@ -176,6 +176,10 @@ body {
   padding: 5px 20px;
 }
 
+.nav-logo {
+  width: 60px;
+}
+
 .bg-col-light {
   background-color: #bfb281 !important;
 }

@@ -3,6 +3,8 @@ import playButton from "../assets/play.svg";
 import pauseButton from "../assets/pause.svg";
 import lightModeButton from "../assets/lightMode.svg";
 import darkModeButton from "../assets/darkMode.svg";
+import logoDarkMode from "../assets/cozy-dark-theme.png";
+import logoLightMode from "../assets/cozy-light-theme.png";
 
 function Navbar({ isPlaying, isLightMode, setIsPlaying, setIsLightMode }) {
   useEffect(() => {
@@ -38,7 +40,13 @@ function Navbar({ isPlaying, isLightMode, setIsPlaying, setIsLightMode }) {
         />
       </div>
       <div>
-        <h1 style={{ color: isLightMode ? "#020205" : "#FFFFFF" }}>Cozy</h1>
+        <div>
+          <img
+            src={isLightMode ? logoLightMode : logoDarkMode}
+            alt="main logo website"
+            className="nav-logo"
+          />
+        </div>
       </div>
       <div>
         <img
